@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PortfolioApp
 {
@@ -22,6 +23,13 @@ namespace PortfolioApp
         public ProjectViewer()
         {
             InitializeComponent();
+        }
+
+        public void SetFields (Project proj)
+        {
+            tbPViewerName.Text = proj.name;
+            tbPViewerDesc.Text = proj.description;
+            //create clickable thumbnails for each image in spThumbs
         }
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
