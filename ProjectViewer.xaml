@@ -1,0 +1,35 @@
+﻿<Window x:Class="PortfolioApp.ProjectViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PortfolioApp"
+        mc:Ignorable="d"
+        Title="ProjectViewer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="tbPViewerName" Grid.Row="1" Grid.Column="1" Text="Project Sample Name"/>
+        <TextBlock x:Name="tbPViewerDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
+        <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
+            <Image x:Name="thumbnail1" Width="60" Height="60" Margin="5 5 5 5"/>
+            <!--Insert source to images. Source is like: C:\Users\User\Pictures\Flowers.png-->
+            <!--Also add onclick function-->
+        </StackPanel>
+    </Grid>
+</Window>
