@@ -26,7 +26,7 @@
         <TextBlock x:Name="tbPViewerDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
         <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
 
-        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
+        <StackPanel Name="spThumbs" Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
             <Image x:Name="thumbnail1" Width="60" Height="60" Margin="5 5 5 5"/>
             <!--Insert source to images. Source is like: C:\Users\User\Pictures\Flowers.png-->
             <!--Also add onclick function-->
