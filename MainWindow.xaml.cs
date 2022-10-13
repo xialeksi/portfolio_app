@@ -25,7 +25,6 @@ namespace PortfolioApp
         public MainWindow()
         {
             InitializeComponent();
-            
             //LoadProjects();
         }
 
@@ -42,7 +41,7 @@ namespace PortfolioApp
         {
             //new
             //this is just placeholder
-            //image names: KanamoriSA.png, nazgul drinking coffee.png, puzzlegremlin.png, venger.jpg
+            //image names: kanamorisa.png, nazgul drinking coffee.png, puzzlegremlin.png, venger.jpg
             ImagePopup ip = new ImagePopup();
             ip.SetSource("puzzlegremlin.png");
             ip.Show();
