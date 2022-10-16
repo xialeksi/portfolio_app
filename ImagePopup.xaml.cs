@@ -27,7 +27,7 @@ namespace PortfolioApp
         {
             string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
             path = path.Substring(0,path.IndexOf("bin")) + "Images\\" + fileName;
-            MessageBox.Show(path);
+            // MessageBox.Show(path);
             var uriSource = new Uri(@""+path, UriKind.Absolute);
             ImageFull.Source = new BitmapImage(uriSource);
             ImgPopMain.Width = new BitmapImage(uriSource).PixelWidth;
