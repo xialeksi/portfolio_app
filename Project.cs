@@ -13,6 +13,7 @@ namespace PortfolioApp
         public string name { get; set; }
         public string description { get; set; }
 
+        public Project() { }
         public Project(int id, string n, string d)
         {
             idproject = id;

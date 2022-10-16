@@ -34,6 +34,23 @@ namespace PortfolioApp
             ImgPopMain.Height = new BitmapImage(uriSource).PixelHeight;
         }
 
+        //if path is different from normal
+        public void SetSource(string fileName, int option) 
+        {
+            if (option == 0)
+                SetSource(fileName);
+            else
+            {
+                /*string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                path = path.Substring(0, path.IndexOf("bin")) + "Images\\" + fileName;*/
+                //MessageBox.Show(fileName);
+                var uriSource = new Uri(@"" + fileName, UriKind.Absolute);
+                ImageFull.Source = new BitmapImage(uriSource);
+                ImgPopMain.Width = new BitmapImage(uriSource).PixelWidth;
+                ImgPopMain.Height = new BitmapImage(uriSource).PixelHeight;
+            }
+        }
+
         private void ImageFull_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Close();

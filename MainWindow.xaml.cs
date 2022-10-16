@@ -37,12 +37,11 @@ namespace PortfolioApp
         private void LoadProjects ()
         {
             //ReloadProjectsList();
-            projectsList = new List<Project>(); //reset projectsList
+            projectsList = new List<Project>(); //clear projectsList
             //do backend shenaningans to insert the projects into this collection: //temp fix:
             projectsList.Add(new Project(1, "First Project", "This is an example placeholder project. #1"));
             projectsList.Add(new Project(1, "Second Project", "This is an example placeholder project. #2"));
             projectsList.Add(new Project(1, "Third Project", "This is an example placeholder project. #3"));
-
 
             //inserting into UI
             CBoxProjectsList.Items.Clear();
@@ -56,6 +55,8 @@ namespace PortfolioApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //new
+            ProjectEditor projectEditor = new ProjectEditor();
+            projectEditor.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
