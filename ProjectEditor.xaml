@@ -1,4 +1,4 @@
-﻿<Window x:Class="PortfolioApp.ProjectViewer"
+﻿<Window x:Class="PortfolioApp.ProjectEditor"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
         Title="ProjectViewer" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
@@ -14,7 +14,9 @@
             <RowDefinition Height="15"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="15"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -23,15 +25,19 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Project Name:" FontSize="10"/>
-        <TextBlock x:Name="tbPViewerName" Grid.Row="1" Grid.Column="1" Text="Project Sample Name"/>
+        <TextBox x:Name="tbPEditorName" Grid.Row="1" Grid.Column="1" Text="Default Text"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Project Description:" FontSize="10"/>
-        <TextBlock x:Name="tbPViewerDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
+        <TextBox x:Name="tbPEditorDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Default Text"/>
         <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
 
-        <StackPanel Name="spThumbs" Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
+        <StackPanel Name="spEditorThumbs" Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
             <!--Image x:Name="thumbnail1" Width="60" Height="60" Margin="5 5 5 5"/-->
             <!--Insert source to images. Source is like: C:\Users\User\Pictures\Flowers.png-->
             <!--Also add onclick function-->
+        </StackPanel>
+        <StackPanel Name="spEditorBtns" Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Height="20" VerticalAlignment="Top">
+            <Button Name="btnNewImg" Width="80" Content="Add Image" Click="btnNewImg_Click"/>
+            <Button Name="btnSaveProject" Width="80" Content="Save Project" Margin="5 0 5 0" Click="btnSaveProject_Click"/>
         </StackPanel>
     </Grid>
 </Window>

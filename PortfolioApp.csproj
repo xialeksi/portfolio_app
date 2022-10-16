@@ -59,6 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MyEnvironment.cs" />
+    <Compile Include="ProjectEditor.xaml.cs">
+      <DependentUpon>ProjectEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Singleton.cs" />
     <Page Include="ImagePopup.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProjectEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProjectViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
