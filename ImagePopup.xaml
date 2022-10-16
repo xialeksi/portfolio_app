@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
-        Title="ImagePopup" Height="Auto" Width="Auto" x:Name="ImgPopMain">
+        Title="ImagePopup" Height="Auto" Width="Auto" x:Name="ImgPopMain"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Image x:Name="ImageFull" Height="Auto" Width="Auto" MouseDown="ImageFull_MouseDown"/>
     </Grid>
