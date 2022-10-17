@@ -64,7 +64,8 @@ namespace PortfolioApp
             ProjectViewer viewer = new ProjectViewer();
             Project p = projectsList.Single(proj => proj.name == CBoxProjectsList.Items[CBoxProjectsList.SelectedIndex].ToString()); //get the correct project from list
             //list of images from the project
-            List<ImageModel> imgList = new List<ImageModel>(); //GetImagesList backend thing
+            List<ImageModel> imgList = WebRequestHandler.GetAllImages();
+            imgList.RemoveAll(item => item.idproject != p.idproject);
             viewer.SetFields(p, imgList);
             viewer.Show();
         }

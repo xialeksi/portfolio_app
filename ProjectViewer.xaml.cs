@@ -20,7 +20,7 @@ namespace PortfolioApp
     /// </summary>
     public partial class ProjectViewer : Window
     {
-        List<ImageModel> imgList;
+        List<ImageModel> currentImages;
         Project currentProject;
 
         public ProjectViewer()
@@ -33,15 +33,16 @@ namespace PortfolioApp
             currentProject = proj;
             tbPViewerName.Text = proj.name;
             tbPViewerDesc.Text = proj.description;
-            
-            imgList = new List<ImageModel>();/*
+
+            currentImages = new List<ImageModel>();
+            currentImages = images;/*
             imgList.Add(new ImageModel(0, 0, "puzzlegremlin.png", ""));
             imgList.Add(new ImageModel(0, 0, "kanamorisa.png", ""));
             imgList.Add(new ImageModel(0, 0, "nazgul drinking coffee.png", ""));
             imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
             imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
             imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));*/
-            foreach (ImageModel i in imgList)
+            foreach (ImageModel i in currentImages)
             {
                 //string imgName = i.filename;
                 CreateThumbnail(i);
@@ -82,7 +83,7 @@ namespace PortfolioApp
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             ProjectEditor projectEditor = new ProjectEditor();
-            projectEditor.SetFields(currentProject,imgList);
+            projectEditor.SetFields(currentProject,currentImages);
             Close();
             projectEditor.Show();
         }
