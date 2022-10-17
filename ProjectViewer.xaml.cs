@@ -21,6 +21,7 @@ namespace PortfolioApp
     public partial class ProjectViewer : Window
     {
         List<ImageModel> imgList;
+        Project currentProject;
 
         public ProjectViewer()
         {
@@ -29,16 +30,17 @@ namespace PortfolioApp
 
         public void SetFields (Project proj, List<ImageModel> images)
         {
+            currentProject = proj;
             tbPViewerName.Text = proj.name;
             tbPViewerDesc.Text = proj.description;
-            //create clickable thumbnails for each image in spThumbs
-            imgList = new List<ImageModel>();
+            
+            imgList = new List<ImageModel>();/*
             imgList.Add(new ImageModel(0, 0, "puzzlegremlin.png", ""));
             imgList.Add(new ImageModel(0, 0, "kanamorisa.png", ""));
             imgList.Add(new ImageModel(0, 0, "nazgul drinking coffee.png", ""));
             imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
             imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
-            imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
+            imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));*/
             foreach (ImageModel i in imgList)
             {
                 //string imgName = i.filename;
@@ -75,6 +77,14 @@ namespace PortfolioApp
             ip.SetSource(im.Tag.ToString());
             ip.Show();
             // MessageBox.Show("Clicked!");
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ProjectEditor projectEditor = new ProjectEditor();
+            projectEditor.SetFields(currentProject,imgList);
+            Close();
+            projectEditor.Show();
         }
     }
 }

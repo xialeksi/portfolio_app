@@ -18,6 +18,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Windows.Markup;
 
 namespace PortfolioApp
 {
@@ -34,20 +35,17 @@ namespace PortfolioApp
             LoadProjects();
         }
 
-        private void LoadProjects ()
+        private void LoadProjects()
         {
-            //ReloadProjectsList();
+            //WebRequestHandler.PostSingleProject();
             projectsList = new List<Project>(); //clear projectsList
-            //do backend shenaningans to insert the projects into this collection: //temp fix:
-            projectsList.Add(new Project(1, "First Project", "This is an example placeholder project. #1"));
-            projectsList.Add(new Project(1, "Second Project", "This is an example placeholder project. #2"));
-            projectsList.Add(new Project(1, "Third Project", "This is an example placeholder project. #3"));
+            projectsList = WebRequestHandler.GetAllProjects(); //webrequest to get all projects
 
             //inserting into UI
             CBoxProjectsList.Items.Clear();
             foreach (Project p in projectsList)
             {
-                CBoxProjectsList.Items.Add(new ComboBoxItem().Content=p.name);
+                CBoxProjectsList.Items.Add(new ComboBoxItem().Content = p.name);
             }
             CBoxProjectsList.SelectedIndex = 0;
         }
@@ -76,14 +74,22 @@ namespace PortfolioApp
             //delete
             if (MessageBox.Show("Delete project \"" + CBoxProjectsList.Items[CBoxProjectsList.SelectedIndex].ToString() + "\"?", "Deleting project", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
             {
-                //MessageBox.Show("Whew, dodged a bullet!");
+                
             }
             else
             {
                 //delete this from backend method
+                Project p = projectsList.Single(proj => proj.name == CBoxProjectsList.Items[CBoxProjectsList.SelectedIndex].ToString());
+                WebRequestHandler.DeleteSingleProject(p.idproject);
                 LoadProjects();
                 MessageBox.Show("Project deleted.");
             }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            //refresh
+            LoadProjects();
         }
     }
 }

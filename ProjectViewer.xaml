@@ -22,8 +22,11 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
+        
+        <Button Name="btnEdit" Grid.Row="1" Grid.Column="1" Width="60" Content="Edit" HorizontalAlignment="Right" Click="btnEdit_Click"/>
+        
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Project Name:" FontSize="10"/>
-        <TextBlock x:Name="tbPViewerName" Grid.Row="1" Grid.Column="1" Text="Project Sample Name"/>
+        <TextBlock x:Name="tbPViewerName" Width="Auto" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Text="Project Sample Name"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Project Description:" FontSize="10"/>
         <TextBlock x:Name="tbPViewerDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
         <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
