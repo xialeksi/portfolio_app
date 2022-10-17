@@ -11,7 +11,7 @@ namespace PortfolioApp
         public int idimage { get; set; }
         public int idproject { get; set; }
         public string filename { get; set; }
-        public string desc { get; set; }
+        public string description { get; set; }
 
         public ImageModel(){}
         public ImageModel(int idi, int idp, string fn, string d)
@@ -19,7 +19,7 @@ namespace PortfolioApp
             idimage = idi;
             idproject = idp;
             filename = fn;
-            desc = d;
+            description = d;
         }
     }
 }

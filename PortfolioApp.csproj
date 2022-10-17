@@ -62,7 +62,7 @@
     <Compile Include="ProjectEditor.xaml.cs">
       <DependentUpon>ProjectEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Singleton.cs" />
+    <Compile Include="WebRequestHandler.cs" />
     <Page Include="ImagePopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -10,7 +10,7 @@ namespace PortfolioApp
     {
         internal static string GetBaseUrl()
         {
-            return "https://localhost:7036/api";
+            return "https://localhost:7036/api/";
             //return "https://pekan-dotnet-university.herokuapp.com/api";
         }
     }

@@ -25,9 +25,9 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Project Name:" FontSize="10"/>
-        <TextBox x:Name="tbPEditorName" Grid.Row="1" Grid.Column="1" Text="Default Text"/>
+        <TextBox x:Name="tbPEditorName" Grid.Row="1" Grid.Column="1" Text="Default Text" TextChanged="tbPEditorName_TextChanged"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Project Description:" FontSize="10"/>
-        <TextBox x:Name="tbPEditorDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Default Text"/>
+        <TextBox x:Name="tbPEditorDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Default Text" TextChanged="tbPEditorDesc_TextChanged"/>
         <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
 
         <StackPanel Name="spEditorThumbs" Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">
