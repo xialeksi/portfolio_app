@@ -75,7 +75,7 @@ namespace PortfolioApp
                 JArray JArr = JArray.Parse(data.Result);
                 foreach (var item in JArr)
                 {
-                    imageList.Add(new ImageModel(int.Parse(item["idimage"].ToString()), int.Parse(item["idproject"].ToString()), item["name"].ToString(), item["description"].ToString()));
+                    imageList.Add(new ImageModel(int.Parse(item["idimage"].ToString()), int.Parse(item["idproject"].ToString()), item["filename"].ToString(), item["description"].ToString()));
                 }
             }
             return imageList;

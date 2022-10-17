@@ -43,6 +43,7 @@ namespace PortfolioApp
             currentProject = proj;
             tbPEditorName.Text = proj.name;
             tbPEditorDesc.Text = proj.description;
+            currentImages = images;
 
             foreach (ImageModel i in currentImages)
             {
