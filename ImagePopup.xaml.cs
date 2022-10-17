@@ -30,6 +30,7 @@ namespace PortfolioApp
             // MessageBox.Show(path);
             var uriSource = new Uri(@""+path, UriKind.Absolute);
             ImageFull.Source = new BitmapImage(uriSource);
+            ImgPopMain.Title = fileName;
             ImgPopMain.Width = new BitmapImage(uriSource).PixelWidth;
             ImgPopMain.Height = new BitmapImage(uriSource).PixelHeight;
         }

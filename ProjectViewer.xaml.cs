@@ -35,13 +35,7 @@ namespace PortfolioApp
             tbPViewerDesc.Text = proj.description;
 
             currentImages = new List<ImageModel>();
-            currentImages = images;/*
-            imgList.Add(new ImageModel(0, 0, "puzzlegremlin.png", ""));
-            imgList.Add(new ImageModel(0, 0, "kanamorisa.png", ""));
-            imgList.Add(new ImageModel(0, 0, "nazgul drinking coffee.png", ""));
-            imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
-            imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));
-            imgList.Add(new ImageModel(0, 0, "venger.jpg", ""));*/
+            currentImages = images;
             foreach (ImageModel i in currentImages)
             {
                 //string imgName = i.filename;
@@ -72,8 +66,6 @@ namespace PortfolioApp
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Image im = sender as Image;
-
-            //image names: kanamorisa.png, nazgul drinking coffee.png, puzzlegremlin.png, venger.jpg
             ImagePopup ip = new ImagePopup();
             ip.SetSource(im.Tag.ToString());
             ip.Show();

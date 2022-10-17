@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="400"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="#212121" Foreground="LightGray">
+    <Window.Resources>
+        <Style x:Key="CommonStyle" TargetType="FrameworkElement">
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource CommonStyle}">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Select a project:"/>
@@ -23,5 +35,6 @@
                 <Button Width="60" Margin="0 0 5 0" Content="Refresh" Click="Button_Click_3"/>
             </StackPanel>
         </StackPanel>
+        
     </Grid>
 </Window>

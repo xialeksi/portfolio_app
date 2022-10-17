@@ -110,7 +110,7 @@ namespace PortfolioApp
             return response;
         }
 
-
+        //post proj
 
         public static Project PostSingleProject(Project proj)
         {
@@ -135,6 +135,8 @@ namespace PortfolioApp
             return response;
         }
 
+        //post img
+
         public static ImageModel PostSingleImage(ImageModel img)
         {
             var data = Task.Run(() => PostRequest(img));
@@ -158,10 +160,49 @@ namespace PortfolioApp
         }
 
 
+        //put proj
+
+        public static Project PutProject(Project proj)
+        {
+            var data = Task.Run(() => PutRequest(proj));
+            data.Wait();
+            return proj;
+        }
+        static async Task<string> PutRequest(Project proj)
+        {
+            var response = string.Empty;
+
+            var json = JsonConvert.SerializeObject(proj);
+            //MessageBox.Show(json.ToString());
+            var postData = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var url = MyEnvironment.GetBaseUrl() + "Project/" + proj.idproject;
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("None");
+            HttpResponseMessage result = await client.PutAsync(url, postData);
+            response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+
+
+
+
+
+
+        //delete proj
 
         public static Project DeleteSingleProject(int id)
         {
             Project p = new Project();
+
+            //delete images first
+            List<ImageModel> imgs = GetAllImages();
+            imgs.RemoveAll(img => img.idproject != id);
+            foreach (ImageModel im in imgs)
+            {
+                DeleteSingleImage(im.idimage);
+            }
+
             var data = Task.Run(() => DeleteRequest("Project/" + id));
             data.Wait();
             //MessageBox.Show(data.Result.ToString());
@@ -174,6 +215,8 @@ namespace PortfolioApp
             }
             return p;
         }
+
+        //delete img
 
         public static ImageModel DeleteSingleImage(int id)
         {

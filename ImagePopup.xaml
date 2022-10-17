@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
         Title="ImagePopup" Height="Auto" Width="Auto" x:Name="ImgPopMain"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="#212121" Foreground="LightGray">
     <Grid>
         <Image x:Name="ImageFull" Height="Auto" Width="Auto" MouseDown="ImageFull_MouseDown"/>
     </Grid>

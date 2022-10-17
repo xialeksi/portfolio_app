@@ -6,13 +6,25 @@
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
         Title="ProjectViewer" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Background="#212121" Foreground="LightGray">
+    <Window.Resources>
+        <Style x:Key="CommonStyle" TargetType="FrameworkElement">
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource CommonStyle}">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="15"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="15"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="15"/>
@@ -28,7 +40,7 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Text="Project Name:" FontSize="10"/>
         <TextBlock x:Name="tbPViewerName" Width="Auto" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Text="Project Sample Name"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Project Description:" FontSize="10"/>
-        <TextBlock x:Name="tbPViewerDesc" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
+        <TextBlock x:Name="tbPViewerDesc" Height="Auto" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="Project Sample Description that should be wrapped"/>
         <!--here's a solution if we want to get fancy: https://stackoverflow.com/questions/11850774/textbox-dynamically-change-height-when-the-user-goes-to-a-new-line -->
 
         <StackPanel Name="spThumbs" Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Height="80" VerticalAlignment="Top">

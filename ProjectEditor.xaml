@@ -6,17 +6,29 @@
         xmlns:local="clr-namespace:PortfolioApp"
         mc:Ignorable="d"
         Title="ProjectViewer" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing" Background="#212121" Foreground="LightGray">
+    <Window.Resources>
+        <Style x:Key="CommonStyle" TargetType="FrameworkElement">
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource CommonStyle}">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="#222222"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="15"/>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="0" Name="rdBeforeThumbs"/>
+            <RowDefinition Height="0" Name="rdThumbs"/>
             <RowDefinition Height="15"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="15"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="15"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -36,8 +48,9 @@
             <!--Also add onclick function-->
         </StackPanel>
         <StackPanel Name="spEditorBtns" Grid.Row="7" Grid.Column="1" Orientation="Horizontal" Height="20" VerticalAlignment="Top">
-            <Button Name="btnNewImg" Width="80" Content="Add Image" Click="btnNewImg_Click"/>
-            <Button Name="btnSaveProject" Width="80" Content="Save Project" Margin="5 0 5 0" Click="btnSaveProject_Click"/>
+            <Button Name="btnSaveProject" Width="80" Content="Save Project" Margin="0 0 0 0" Click="btnSaveProject_Click"/>
+            <Button Name="btnNewImg" Width="80" Content="Add Image" Margin="5 0 0 0" Click="btnNewImg_Click"/>
+            <Button Name="btnDeleteImg" Width="80" Content="Delete Image" Margin="5 0 0 0" Click="btnDeleteImg_Click"/>
         </StackPanel>
     </Grid>
 </Window>
